@@ -14,7 +14,6 @@
 
 void sayi_ekle(int a){
 	boost::this_thread::sleep_for(boost::chrono::milliseconds(500));
-	std::cout<<"eklendi"<<std::endl;;
 }
 
 int main() {

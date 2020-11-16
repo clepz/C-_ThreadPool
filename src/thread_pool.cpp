@@ -38,7 +38,6 @@ void clepz::thread_pool::pool_thread(void){
 				que.pop();
 			}
 			else{
-				std::cout<<"else"<<std::endl;
 				continue;}
 		}
 		job();
@@ -61,9 +60,7 @@ void clepz::thread_pool::add_function(boost::function<void()> fun){
 
 void clepz::thread_pool::wait_all_jobs(){
 	std::unique_lock<std::mutex> job_lock(job_mtx);
-	std::cout<<"girdi"<<std::endl;
 	job_cv.wait(job_lock, [&]() {return job_count == 0;});
-	std::cout<<"j_c: "<<job_count<<std::endl;
 
 }
 
